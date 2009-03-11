@@ -1,0 +1,4 @@
+page.visual_effect :fade, 'relationship_section_' + @deleted_id.to_s
+if @empty
+  page.hide 'relationship_tree'
+end

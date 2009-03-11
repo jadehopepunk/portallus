@@ -1,0 +1,18 @@
+<html>
+
+	<head>
+		<title><%= controller.action_name %></title>
+		
+		<%= stylesheet_link_tag 'tinymce_popup' %>
+		<%= javascript_include_tag '/javascripts/tiny_mce/tiny_mce_popup.js' %>
+		
+	</head>
+	
+	<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0"> 	
+		<% if @flash['notice'] -%>
+			<div class="notice"><%= @flash['notice'] %></div>
+		<% end -%>				
+		<%= @content_for_layout %>
+	</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Sections: <%= controller.action_name %></title>
+	<%= stylesheet_link_tag 'scaffold' %>
+	<%= stylesheet_link_tag 'portallus' %>
+	<%= stylesheet_link_tag 'forms' %>
+</head>
+<body>
+
+	<br />
+	<br />
+	<br />
+	<div align="center">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="10" height="10" class="roundborder_topleft"></td>
+				<td class="roundborder_topcenter"></td>
+				<td width="10" height="10" class="roundborder_topright"></td>
+			</tr>
+			<tr>
+				<td class="roundborder_centerleft"></td>
+				<td class="roundborder_center">
+					<% if @flash['notice'] -%>
+  					<div class="notice"><%= @flash['notice'] %></div>
+					<% end -%>				
+					<%= @content_for_layout %>
+				</td>
+				<td class="roundborder_centerright"></td>
+			</tr>
+			<tr>
+				<td width="10" height="10" class="roundborder_bottomleft"></td>
+				<td class="roundborder_bottomcenter"></td>
+				<td width="10" height="10" class="roundborder_bottomright"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

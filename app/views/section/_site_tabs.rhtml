@@ -1,0 +1,22 @@
+
+<% if @sites != nil && @sites.length > 1 then -%>
+  <div class="tab_bar">
+    <table cellpadding="0" cellspacing="0">
+      <tr>
+        <% @sites.each do |site| -%>
+          <td>
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td><%= image_tag('/images/tabs/tab' + (site == @person ? '_active' : '') + '_left.gif', :size => '21x47') %></td>
+                <td class="site_tab<%= "_current" if site == @person %>"><a href="<%= url_for(:controller => 'section', :action => 'show', :username => site) %>"><%= site.name %></a></td>
+                <td><%= image_tag('/images/tabs/tab' + (site == @person ? '_active' : '') + '_right.gif', :size => '21x47') %></td>
+              </tr>
+            </table>
+          </td>
+        <% end -%>
+      </tr>
+    </table>
+  </div>
+<% else  %>
+  <br><br>
+<% end %>

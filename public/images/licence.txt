@@ -1,0 +1,8 @@
+These images are the property of their respective copywrite owners. Most of them are available under the GNU Lesser General Public Licence, available at http://www.fsf.org/licenses/lgpl.html.
+
+Icons used include:
+
+Nuvola Icon Set (LGPL)
+by David Vignoni
+http://www.icon-king.com
+

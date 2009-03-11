@@ -1,0 +1,38 @@
+<% if @entry then %>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="10" height="10" class="roundborder_topleft"></td>
+		<td class="roundborder_topcenter"></td>
+		<td width="10" height="10" class="roundborder_topright"></td>
+	</tr>
+	<tr>
+		<td class="roundborder_centerleft"></td>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr valign="middle">
+					<td style="font-size: small; font-weight: bold; font-variant: small-caps; color: grey;">
+						<%= @entry.created_at.strftime('%a %B %d, %Y') %>
+					</td>
+					<td align="right">
+						<% if @can_administer -%>
+							<a href="<%= @path + @entry.edit_link %>" class="action_tab"><%= image_tag('/images/22x22/edit.png', :size => '22x22') %>&nbsp;Edit</a>
+						<% end -%>
+					</td>
+				</tr>
+			</table>
+			<h2><a href="<%= 'show/' + @entry.to_param.to_s %>" class="article_heading"><%=h @entry.heading %></a></h2>
+			<br>
+			<div><%= @entry.text %></div>
+			<br>
+			<div><%= @entry.more_text %></div>
+		</td>
+		<td class="roundborder_centerright"></td>
+	</tr>
+	<tr>
+		<td width="10" height="10" class="roundborder_bottomleft"></td>
+		<td class="roundborder_bottomcenter"></td>
+		<td width="10" height="10" class="roundborder_bottomright"></td>
+	</tr>
+</table>
+<br>
+<% end %>

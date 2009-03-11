@@ -1,0 +1,17 @@
+<h1>Site List</h1>
+<p>The following people have already created Portallus sites.</p>
+
+<ul>
+  <% for person in @people -%>
+  <li><a href="<%= url_for(:controller => 'section', :action => 'show', :username => person) %>"><%=h person.name %>: <%=h person.title %></a></li>
+  <% end -%>
+</ul>
+
+<p>The following SCA persona sites have also been created.</p>
+
+<ul>
+  <% for persona in @personae -%>
+  <li><a href="<%= url_for(:controller => 'section', :action => 'show', :username => persona) %>"><%=h persona.name %></a></li>
+  <% end -%>
+</ul>
+

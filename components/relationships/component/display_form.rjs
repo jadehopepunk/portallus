@@ -1,0 +1,5 @@
+page.visual_effect :fade, 'new_item_link', :duration => 0.5
+
+page.replace_html 'relationship_form', :partial => 'form'
+page.hide 'relationship_form'
+page.visual_effect :appear, 'relationship_form', :duration => 0.5

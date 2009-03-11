@@ -1,0 +1,19 @@
+<div id="event_summary_<%=h @event.id %>" class="summary" style="display: none;">
+  <h1><%=h @event.title %></h1>
+  <table>
+    <tr>
+      <td class="label">Start</td>
+      <td><%= @event.start.strftime("%a %d %B, %I:%M %p") %></td>
+    </tr>
+    <tr>
+      <td class="label">End</td>
+      <td><%= @event.end.strftime("%a %d %B, %I:%M %p") %></td>
+    </tr>
+    <tr>
+      <td class="label">Location</td>
+      <td><%=h @event.location %></td>
+    </tr>
+  </table>
+  <div><%= simple_format h @event.details %></div>
+
+</div>

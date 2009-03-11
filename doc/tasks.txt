@@ -1,0 +1,29 @@
+
+TODO
+
+functional tests
+
+- Craig Ambrose wants to create a new person site
+	- He can sign up
+	- He can log in
+	- He can log out
+
+DONE
+
+- cancel on rename page
+- while on section form, section appears in menu
+- on creating a section, either force them to chose, or select one by default
+- allow rename section
+- on creating a new site, you are redirected to your site
+- portal titles should display
+- login should set first_name, last_name and title
+- Breadcrumb is wrong for Home
+- Cant add section to root
+- Link in navigator is wrong
+- Single page edit link shouldn't display while editing
+- Edit single page link is wrong
+- When a section is deleted, it should delete its children
+- Make blog "Read More" link point at correct location
+- section "get remaining name" function
+- user "find_section" and should not require the whole hierarchy of names to be used
+- user "find section" should be "find_first_section" 

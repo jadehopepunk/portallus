@@ -1,0 +1,59 @@
+<div class="relationship_form">
+  <%= form_remote_tag(:update => 'add_relationship_form', :url => @current_link) %>
+    <div>
+      <div align="center"><%= error_messages_for 'relationship'  %></div>
+      <div align="center"><%= error_messages_for 'inverse_relationship' %></div>
+
+      <div align="center">
+        <table border="0">
+          <tr align="center">
+            <td></td>
+            <td>Your Name</td>
+            <td><label for="relationship_description">Relationship Description</label></td>
+            <td><label for="relationship_destination">With</label></td>
+          </tr>
+          <tr style="font-style: italic;" align="center">
+            <td>example: </td>
+            <td>Isabella</td>
+            <td>is wife of</td>
+            <td>Ferdinand</td>
+          </tr>
+          <tr style="font-style: italic;" align="center">
+            <td></td>
+            <td>Ferdinand</td>
+            <td>is husband of</td>
+            <td>Isabella</td>
+          </tr>
+          <tr>
+            <td colspan="4">&nbsp;</td>
+          </tr>
+          <tr align="center" valign="top">
+            <td></td>
+            <td style="padding-left: 10px; padding-right: 10px"><%=h @relationship.source.name %></td>
+            <td style="padding-left: 10px; padding-right: 10px" valign="top">
+              <%= text_field('relationship', 'description', :style => "width: 250px") %>
+              <div id="relationship_description_suggestions"></div>
+              <%= observe_field(:relationship_description, :frequency => 0.5, :update => :relationship_description_suggestions, :url => @suggestions_link + "/field=relationship_description") %>
+            </td>
+            <td style="padding-left: 10px; padding-right: 10px" valign="top"><%= select("relationship", "destination_id", @relationship.available_destinations.collect {|p| [ p.name, p.id ] }, { :include_blank => true }, {:onchange => "document.getElementById('relationship_destination_name_label').innerHTML = this.options[this.selectedIndex].text"}) %></td>
+          </tr>
+          <tr align="center" valign="top">
+            <td></td>
+            <td><span id="relationship_destination_name_label"><%=h @inverse_relationship.source.name unless @inverse_relationship.source == nil %></span></td>
+            <td style="padding-left: 10px; padding-right: 10px" valign="top">
+              <%= text_field('inverse_relationship', 'description', :style => "width: 250px") %>
+              <div id="inverse_relationship_description_suggestions"></div>
+              <%= observe_field(:inverse_relationship_description, :frequency => 0.5, :update => :inverse_relationship_description_suggestions, :url => @suggestions_link + "/field=inverse_relationship_description") %>
+            </td>
+            <td style="padding-left: 10px; padding-right: 10px" valign="top"><%=h @inverse_relationship.destination.name %></td>
+          </tr>
+        </table>
+      </div>
+
+      <input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+      <a href="" style="float: left"><img src="<%= image_path('/images/48x48/cancel.gif') %>" /></a>
+      <br />
+      <br />
+    </div>
+  <%= end_form_tag %>
+</div>

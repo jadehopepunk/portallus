@@ -1,0 +1,15 @@
+<div>
+	<%= error_messages_for 'edit_page' %>
+
+	<table cellspacing="0" cellpadding="0" class="portallus_form">
+		<tr>
+			<td class="label_column"><label for="section_text">Text</label></td>
+			<td><%= html_field('edit_page', 'text', @edit_page.text) %></td>
+		</tr>
+	</table>
+
+	<input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+	<input class="button" type="image" src="<%= image_path('/images/48x48/cancel.gif') %>" name="submit" id="cancel" value="cancel" alt="cancel" style="float: left">
+	<br>
+	<br>
+</div>

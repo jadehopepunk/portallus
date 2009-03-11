@@ -1,0 +1,138 @@
+
+table.portallus_form
+{
+  width: 100%;
+  border-width: 0;
+}
+
+.portallus_form label
+{
+  font-weight: bold;
+}
+
+table.record_details td.label
+{
+  font-weight: bold;
+  padding-right: 3em;
+}
+
+.portallus_form .field_description
+{
+  color: #666666;
+}
+
+.portallus_form input
+{
+  width: 100%;
+  max-width: 400px;
+  font-size: 11pt;
+  font-family: Arial, Helvetica, Verdana;
+  color: #333333;
+}
+
+.portallus_form select
+{
+  color: #333333;
+}
+
+.portallus_form textarea
+{
+  width: 100%;
+  font-size: 11pt;
+  font-family: Arial, Helvetica, Verdana;
+  color: #333333;
+}
+
+.portallus_form .label_column
+{
+  width: 150px;
+  padding-right: 8px;
+  text-align: right;
+}
+
+.portallus_form tr
+{
+  vertical-align: top;
+}
+
+.portallus_form td
+{
+  padding-bottom: 10px;
+}
+
+div.inline_form h2
+{
+  margin-bottom: 1em;
+}
+
+
+/* PHP PORT FORM SYSTEM */
+
+input.pform_field
+{
+  width: 100%;
+  min-width: 300px;
+}
+
+.pform_sub_page
+{
+  width: 100%;
+  min-width: 300px;
+  border: solid silver 1px;
+}
+
+font.field_valid
+{
+  font-weight: bold;
+}
+
+font.field_invalid
+{
+  color: red;
+  font-weight: bold;
+}
+
+p.form_result_warning
+{
+  font-weight: bold;
+}
+
+li.form_result_warning
+{
+  font-weight: bold;
+  color: red;
+}
+
+h1.form_page_title
+{
+  font-size: 16px;
+}
+
+div.suggestions
+{
+  border: solid black 1px;
+  text-align: left;
+  width: 250px;
+}
+
+div.suggestions a, div.suggestions a:link, div.suggestions a:active, div.suggestions a:visited
+{
+  display: block;
+  padding: 2px;
+  color: #333333;
+  font-size: 8pt;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+div.suggestions a:hover
+{
+  display: block;
+  padding: 2px;
+  color: #333333;
+  font-size: 8pt;
+  text-decoration: none;
+  background-color: silver;
+}
+
+/* END PHP PORT FORM SYSTEM */

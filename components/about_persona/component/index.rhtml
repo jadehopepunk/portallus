@@ -1,0 +1,86 @@
+<%= render_partial "action_menu" %>
+<h1><%=h @section.send('heading') %></h1>
+
+<div align="center">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="10" height="10" class="roundborder_topleft"></td>
+      <td class="roundborder_topcenter"></td>
+      <td width="10" height="10" class="roundborder_topright"></td>
+    </tr>
+    <tr>
+      <td class="roundborder_centerleft"></td>
+      <td>
+        <table>
+          <tr valign="top">
+            <% unless @site.picture.blank? then -%>
+              <td>
+                <%= image_tag(url_for_file_column("site", "picture")) %>
+              </td>
+            <% end -%>
+            <td>
+              <table class="details">
+                <% unless @details.name.blank? then -%>
+                  <tr>
+                    <td class="label">Name</td>
+                    <td><%=h @details.send('full_name') %></td>
+                  </tr>
+                <% end -%>
+                <% unless @details.local_group.blank? then -%>
+                  <tr>
+                    <td class="label">Local Group</td>
+                    <td><%=h @details.send('local_group') %></td>
+                  </tr>
+                <% end -%>
+                <% unless @details.kingdom.blank? then -%>
+                  <tr>
+                    <td class="label">Kingdom</td>
+                    <td><%=h @details.send('kingdom') %></td>
+                  </tr>
+                <% end -%>
+                <% unless @details.awards.blank? then -%>
+                  <tr>
+                    <td class="label">Awards</td>
+                    <td><%=h @details.send('awards') %></td>
+                  </tr>
+                <% end -%>
+                <% unless @details.offices_held.blank? then -%>
+                  <tr>
+                    <td class="label">Offices Held</td>
+                    <td><%= simple_format h @details.send('offices_held') %></td>
+                  </tr>
+                <% end -%>
+                <% unless @details.historical_context.blank? then -%>
+                  <tr>
+                    <td class="label">Historical Context</td>
+                    <td><%= simple_format h @details.send('historical_context') %></td>
+                  </tr>
+                <% end -%>
+              </table>
+            </td>
+            <% unless @details.device.blank? then -%>
+              <td>
+                <%= image_tag(url_for_file_column("details", "device")) %>
+              </td>
+            <% end -%>
+          </tr>
+        </table>
+
+      </td>
+      <td class="roundborder_centerright"></td>
+    </tr>
+    <tr>
+      <td width="10" height="10" class="roundborder_bottomleft"></td>
+      <td class="roundborder_bottomcenter"></td>
+      <td width="10" height="10" class="roundborder_bottomright"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<%= @details.send('site_introduction') %>
+
+
+
+
+
+

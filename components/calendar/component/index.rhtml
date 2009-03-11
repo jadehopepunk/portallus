@@ -1,0 +1,95 @@
+<script>
+  function DisplaySummary(eventID)
+  {
+    var summaryElement = document.getElementById('event_summary_' + eventID)
+    summaryElement.style.display = 'block';
+  }
+
+  function HideSummary(eventID)
+  {
+    var summaryElement = document.getElementById('event_summary_' + eventID)
+    summaryElement.style.display = 'none';
+  }
+</script>
+
+<div id="new_item_link" style="float: right">
+  <% if @can_administer -%>
+    <%= link_to_remote(
+      image_tag("/images/22x22/new.png", :size => '22x22') + "&nbsp;New Event",
+      { :url => @section.url + '/display_form' },
+      { :class => "ajax_action_button"}) %>
+  <% end -%>
+</div>
+<h1><%=h @section.send('heading') %></h1>
+
+<div id="event_form">
+</div>
+<div id="event_summary" style="display: none">Here is an event summary
+</div>
+
+<br />
+
+<div align="center">
+  <table class="calendar" cellspacing="4">
+    <thead>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th></th>
+      <th>Sat</th>
+      <th>Sun</th>
+    </thead>
+    <tbody>
+      <% first_day = true -%>
+      <% @weeks.each do |week| -%>
+        <tr>
+          <% week.each do |day| -%>
+            <% if day.cwday == 6 -%>
+              <td class="spacer">&nbsp;</td>
+            <% end -%>
+
+            <td class="<%= (day < @desired_start || day > @desired_end) ? 'past' : (day == Date.today ? 'present' : 'future') %>" id="<%= day.to_s %>">
+
+              <span class="mday"><%= day.mday %></span>
+              <% if day.mday == 1 || day == Date.today || first_day -%>
+                <span class="month"><%= Date::ABBR_MONTHNAMES[day.month] %></span>
+              <% end -%>
+
+              <% unless @events[day] == nil -%>
+                <% @events[day].each do |@event| -%>
+                  <%= render(:partial => "event_link") %>
+                <% end -%>
+              <% end -%>
+
+            </td>
+            <% first_day = false -%>
+          <% end -%>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+</div>
+
+<br />
+
+<div align="center" class="jumpbar">
+  <script>
+    function JumpTo()
+    {
+      var yearSelect = document.getElementsByName('jump[year]')[0];
+      var monthSelect = document.getElementsByName('jump[month]')[0];
+      var year = yearSelect.options[yearSelect.selectedIndex].value;
+      var month = monthSelect.options[monthSelect.selectedIndex].value;
+      window.location = '<%= @section.url %>/show/' + year + '/' + month
+    }
+  </script>
+
+  <span>Jump To</span>
+  <%= select_month(@desired_start, :prefix => 'jump') %>
+  <%= select_year(@desired_start, :prefix => 'jump') %>
+  <button onclick="javascript: JumpTo();" >Go</button>
+</div>
+
+<%= debug_ajax %>

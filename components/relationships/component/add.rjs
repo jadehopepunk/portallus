@@ -1,0 +1,9 @@
+if @saved
+  page.visual_effect :fade, 'relationship_form', :duration => 0.5
+  #page.hide 'post_error'
+  #page.replace_html 'post_error', 'Post Created'
+  #page.visual_effect :appear, 'post_error', :duration => 0.5
+else # not saved, so send back the error messages and new form
+end
+
+page.visual_effect :fade, 'relationship_section_' + @deleted_id.to_s

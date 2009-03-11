@@ -1,0 +1,97 @@
+
+table.calendar
+{
+  background-color: white;
+}
+
+table.calendar td
+{
+  background-color: silver;
+  width: 100px;
+  height: 100px;
+  vertical-align: top;
+  padding: 2px;
+}
+
+table.calendar td.spacer
+{
+  background-color: white;
+  width: 5px;
+  padding: 0px;
+}
+
+table.calendar td.past
+{
+  background-color: #DDDDDD;
+}
+
+table.calendar td.present
+{
+  border: solid #339900 3px;
+}
+
+table.calendar td.past span.mday
+{
+  color: #999999;
+}
+
+table.calendar span.mday
+{
+  float: right;
+}
+
+table.calendar span month
+{
+  float: left;
+}
+
+table.calendar a.event
+{
+  font-size: 8pt;
+  display: block;
+  z-index: 1;
+}
+
+.summary
+{
+  background-color: yellow;
+  border: solid black 1px;
+  padding: 4px;
+  position: absolute;
+  left: -200px;
+  top: 2em;
+  z-index: 10;
+}
+
+.summary h1
+{
+  color: black;
+  font-size: 12pt;
+  margin-bottom: 5px;
+}
+
+div.summary td
+{
+  background-color: transparent;
+  padding: 0px;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+}
+
+div.summary td.label
+{
+  font-weight: bold;
+}
+
+.jumpbar span
+{
+  color: #333333;
+  font-weight: bold;
+}
+
+.jumpbar input, select
+{
+  vertical-align:middle;
+  display:inline;
+}

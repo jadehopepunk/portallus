@@ -1,0 +1,44 @@
+<%= start_form_tag :action=> "create" %>
+
+<div title="Account signup" id="signupform" class="form">
+	<h3>New Portallus Website</h3>
+	<ul>
+		<li>These details will be publicly visible.</li>
+	</ul>
+	<%= error_messages_for 'person' %><br/>
+	
+	<table border="0">
+		<tr>
+			<td>
+				<label for="person_fist_name">First Name:</label>
+			</td>
+			<td>
+				<%= text_field("person", "first_name", :size => 30) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="person_last_name">Surname:</label>
+			</td>
+			<td>
+				<%= text_field("person", "last_name", :size => 30) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="person_title">Site Title:</label>
+				(Optional)
+			</td>
+			<td>
+				<%= text_field("person", "title", :size => 30) %>
+			</td>
+		</tr>
+	</table>
+	<br/>
+
+	<div align="right">
+		<input class="button" type="image" src="/images/48x48/submit.gif" name="submit" value="submit" alt="submit">
+	</div>
+
+<%= end_form_tag %>
+

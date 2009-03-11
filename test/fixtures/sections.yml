@@ -1,0 +1,40 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+last_section:
+  id: 1
+  user_id: 1000001
+  name: 'lastsection'
+  position: 2
+  heading: 'last section'
+  component: 'SinglePage'
+first_section:
+  id: 2
+  user_id: 1000001
+  name: 'firstsection'
+  position: 1
+  heading: 'first section'
+  component: 'SinglePage'
+first_child:
+  id: 3
+  user_id: 1000001
+  parent_section_id: 1
+  name: 'child'
+  position: 1
+  heading: 'first ild'
+  component: 'SinglePage'
+second_child:
+  id: 4
+  user_id: 1000001
+  parent_section_id: 1
+  name: 'child2'
+  position: 2
+  heading: 'second child'
+  component: 'SinglePage'
+only_child:
+  id: 5
+  user_id: 1000001
+  parent_section_id: 4
+  name: 'onlychild'
+  position: 1
+  heading: 'only child'
+  component: 'SinglePage'
+  

@@ -1,0 +1,42 @@
+<%= @debug %>
+
+<%= start_form_tag :action=> "edit" %>
+
+<div id="editform" class="form">
+	<h3>Edit Account: "<%=h @user.email %>"</h3>
+	<%= error_messages_for 'user' %><br/>
+	
+	<table border="0">
+		<tr>
+			<td>
+				<label for="user_email">Email Address:</label>
+			</td>
+			<td>
+				<%= text_field("user", "email", :size => 30) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="user_password">Change Password:</label>
+			</td>
+			<td>
+				<%= password_field('password', "password", :size => 30) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="user_password_confirmation">Confirm Password:</label>
+			</td>
+			<td>
+				<%= password_field('password', "password_confirmation", :size => 30) %>
+			</td>
+		</tr>
+	</table>
+	<br/>
+
+	<div align="right">
+		<input class="button" type="image" src="/images/48x48/submit.gif" name="submit" value="submit" alt="submit">
+	</div>
+
+<%= end_form_tag %>
+

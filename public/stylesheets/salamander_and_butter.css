@@ -1,0 +1,287 @@
+
+body
+{
+   background-color: #666666;
+   background-image: url('../images/salamander_and_butter/background.gif');
+   font-family: "Trebuchet MS", Arial, Helvetica, Verdana;
+   margin: 0px;
+}
+
+a, a:visited, a:link, a:active
+{
+   color: purple;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+a:hover
+{
+   text-decoration: underline;
+}
+
+
+div.portal_body
+{
+   padding: 10px;
+}
+
+table.portal_header
+{
+  width: 100%;
+}
+
+table.portal_header td.left
+{
+   background-image: url('../images/salamander_and_butter/header_left.gif');
+   height: 54px;
+   width: 10px;
+}
+
+table.portal_header td.right
+{
+   background-image: url('../images/salamander_and_butter/header_right.gif');
+   height: 54px;
+   width: 10px;
+}
+
+table.portal_header td.center
+{
+   background-image: url('../images/salamander_and_butter/header_center.gif');
+   height: 54px;
+}
+
+table.portal_header .site_title
+{
+   color: purple;
+   letter-spacing: 0.1em;
+   margin-top: 0.5em;
+   font-size: 30px;
+   font-weight: normal;
+}
+
+table.body_border
+{
+   margin-top: 20px;
+   width: 100%;
+}
+
+table.body_border td.topleft
+{
+   background-image: url('../images/salamander_and_butter/body_top_left.gif');
+   background-repeat: no-repeat;
+   background-position: top left;
+   width: 10px;
+   height: 10px;
+}
+
+table.body_border td.topcenter
+{
+   background-image: url('../images/salamander_and_butter/body_top_center.gif');
+   background-repeat: repeat-x;
+   background-position: top left;
+   height: 10px;
+}
+
+table.body_border td.topright
+{
+   background-image: url('../images/salamander_and_butter/body_top_right.gif');
+   background-repeat: no-repeat;
+   background-position: top left;
+   width: 10px;
+   height: 10px;
+}
+
+table.body_border td.centerleft
+{
+   background-image: url('../images/salamander_and_butter/body_center_left.gif');
+   background-repeat: repeat-y;
+   background-position: top left;
+   width: 10px;
+}
+
+table.body_border td.center
+{
+   background-color: white;
+}
+
+table.body_border td.centerright
+{
+   background-image: url('../images/salamander_and_butter/body_center_right.gif');
+   background-repeat: repeat-y;
+   background-position: top left;
+   width: 10px;
+}
+
+table.body_border td.bottomleft
+{
+   background-image: url('../images/salamander_and_butter/body_bottom_left.gif');
+   background-repeat: no-repeat;
+   background-position: top left;
+   width: 10px;
+   height: 10px;
+}
+
+table.body_border td.bottomcenter
+{
+   background-image: url('../images/salamander_and_butter/body_bottom_center.gif');
+   background-repeat: repeat-x;
+   background-position: top left;
+   height: 10px;
+}
+
+table.body_border td.bottomright
+{
+   background-image: url('../images/salamander_and_butter/body_bottom_right.gif');
+   background-repeat: no-repeat;
+   background-position: top left;
+   width: 10px;
+   height: 10px;
+}
+
+.menu_box img
+{
+   border-width: 0px;
+}
+
+.box
+{
+   width: 100%;
+}
+
+.box img
+{
+   background-color: white;
+   border: solid #996600 2px;
+   padding: 1px;
+   position: relative;
+   top: 4px;
+}
+
+.box .top .left
+{
+   background-image: url('../images/salamander_and_butter/menu_top_left.gif');
+   background-repeat: no-repeat;
+   width: 10px;
+   height: 23px;
+}
+
+.box .top .center
+{
+   background-image: url('../images/salamander_and_butter/menu_top_background.gif');
+   background-repeat: repeat-x;
+   height: 23px;
+   min-width: 130px;
+}
+
+.box .top .center .inner
+{
+   background-image: url('../images/salamander_and_butter/menu_top_center.gif');
+   background-repeat: no-repeat;
+   height: 23px;
+   min-width: 130px;
+   text-align: center;
+}
+
+.box .top .center .inner a, .box .top .center .inner span
+{
+   color: black;
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 15px;
+   position: relative;
+   top: 2px;
+   display: block;
+   padding: 0px;
+   background-image: none;
+}
+
+.box .top .right
+{
+   background-image: url('../images/salamander_and_butter/menu_top_right.gif');
+   background-repeat: no-repeat;
+   width: 10px;
+   height: 23px;
+}
+
+.box .center .center
+{
+   background-image: url('../images/salamander_and_butter/menu_inside.gif');
+   background-repeat: repeat;
+}
+
+.box .center .center .inner
+{
+   background-image: url('../images/salamander_and_butter/menu_center.gif');
+   background-repeat: repeat-y;
+   min-width: 130px;
+}
+
+.box .center .left, .box .center .right
+{
+   background-image: url('../images/salamander_and_butter/menu_border.gif');
+   background-repeat: repeat;
+   width: 3px;
+}
+
+.box .bottom .left
+{
+   background-image: url('../images/salamander_and_butter/menu_bottom_left.gif');
+   background-repeat: no-repeat;
+   width: 10px;
+   height: 10px;
+}
+
+.box .bottom .center .inner
+{
+   background-image: url('../images/salamander_and_butter/menu_bottom_center.gif');
+   background-repeat: no-repeat;
+   height: 10px;
+   min-width: 130px;
+}
+
+.box .bottom .center
+{
+   background-image: url('../images/salamander_and_butter/menu_bottom_background.gif');
+   background-repeat: repeat-x;
+   height: 10px;
+}
+
+.box .bottom .right
+{
+   background-image: url('../images/salamander_and_butter/menu_bottom_right.gif');
+   background-repeat: no-repeat;
+   width: 10px;
+   height: 10px;
+}
+
+.box a:link, .box a:active, .box a:visited
+{
+   color: black;
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 15px;
+   display: block;
+   padding-left: 2px;
+}
+
+.box a.child:link, .box a.child:active, .box a.child:visited, .box a.child:hover
+{
+   padding-left: 15px;
+}
+
+.box a.root_active:link, .box a.root_active:active, .box a.root_active:visited
+{
+   background-image: url('../images/salamander_and_butter/menu_highlight.gif');
+}
+
+.box a:hover, .box a.root_active:hover
+{
+   background-image: url('../images/salamander_and_butter/menu_inside.gif');
+}
+
+div.content_panel
+{
+  padding: 4px;
+  margin-left: 15px;
+}
+

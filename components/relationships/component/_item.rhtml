@@ -1,0 +1,11 @@
+<div id="relationship_section_<%=h item.id %>" onmouseover="document.getElementById('delete_link_<%=h item.id %>').style.display = 'inline'" onmouseout="document.getElementById('delete_link_<%=h item.id %>').style.display = 'none'" style="height: 24px;">
+  &nbsp; <%=h item.description %> &nbsp; <strong><a href="/people/<%= item.destination.to_param %>" ><%=h item.destination.name %><a></strong>
+  <% if @can_administer -%>
+    <%= link_to_remote(
+          image_tag("/images/48x48/delete.png", :size => '22x22', :align => "top"),
+          { :url => @section.to_param + '/delete/' + item.id.to_s },
+          { :id => "delete_link_" + item.id.to_s, :style => "display: none;" }
+       ) %>
+  <% end -%>
+</div>
+

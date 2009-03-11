@@ -1,0 +1,8 @@
+<% if @can_administer -%>
+  <br />
+  <br />
+  <%= link_to_remote(
+    image_tag("/images/22x22/new.png", :size => '22x22') + "&nbsp;New Relationship",
+    {:url => @show_form_link, :update => 'add_relationship_form'},
+    {"class" => "ajax_action_button"}) %>
+<% end -%>

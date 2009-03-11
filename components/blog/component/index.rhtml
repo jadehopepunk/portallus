@@ -1,0 +1,77 @@
+<%= @debug %>
+<h1><%=h @section.send('heading') %></h1>
+<% if @edit_link && @new_entry_link then -%>
+	<a href="<%= @path + @edit_link %>" class="action_tab"><%= image_tag('/images/22x22/edit.png', :size => '22x22') %>&nbsp;Edit</a>
+	<a href="<%= @path + @new_entry_link %>" class="action_tab"><%= image_tag('/images/22x22/new.png', :size => '22x22') %>&nbsp;New Entry</a>
+<% end -%>
+
+<%= @description %>
+<br><br><br><br>
+
+<% for entry in @entries -%>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="10" height="10" class="roundborder_topleft"></td>
+			<td class="roundborder_topcenter"></td>
+			<td width="10" height="10" class="roundborder_topright"></td>
+		</tr>
+		<tr>
+			<td class="roundborder_centerleft"></td>
+			<td>
+				<% if @can_administer -%>
+					<a style="float: right;" href="<%= @path + entry.edit_link %>" class="action_tab"><%= image_tag('/images/22x22/edit.png', :size => '22x22') %>&nbsp;Edit</a>
+				<% end -%>
+				<span style="font-size: small; font-weight: bold; font-variant: small-caps; color: grey;">
+					<%= entry.created_at.strftime('%a %B %d, %Y') %>
+				</span>
+				<h2><a href="<%= @path + 'show/' + entry.to_param.to_s %>" class="article_heading"><%=h entry.heading %></a></h2>
+				<br>
+				<div><%= entry.text %></div>
+				<% if entry.has_more_text -%>
+					<br>
+					<div align="right"><a href="<%= @path + entry.show_link %>">Read More</a></div>
+				<% end -%>
+			</td>
+			<td class="roundborder_centerright"></td>
+		</tr>
+		<tr>
+			<td width="10" height="10" class="roundborder_bottomleft"></td>
+			<td class="roundborder_bottomcenter"></td>
+			<td width="10" height="10" class="roundborder_bottomright"></td>
+		</tr>
+	</table>
+	<br>
+<% end -%>
+
+<% if @old_entries then -%>
+	<ul>
+<% end -%>
+<% for entry in @old_entries -%>
+	<li>
+		<a href="<%= @path + 'show/' + entry.to_param.to_s %>" class="index_item"><%=h entry.heading %></a>
+	</li>
+<% end -%>
+<% if @old_entries then -%>
+	</ul>
+<% end -%>
+
+<% if @newer_link -%>
+	<a href="<%= @newer_link %>" class="result_navigator">Newer</a>
+<% end -%>
+<% if @newer_link && @older_link then %> | <% end -%>
+<% if @older_link -%>
+	<a href="<%= @older_link %>" class="result_navigator">Older</a>
+<% end -%>
+
+<!--
+{if $index_articles}
+	<ul>
+		{section name=i loop=$index_articles}
+			<li><a href="{$index_articles[i]._link}" class="index_item">{$index_articles[i].heading}...</a></li>
+		{/section}
+	</ul>
+{/if}
+{section name=n loop=$result_navigator}
+	{if $smarty.section.n.index != 0}&nbsp|&nbsp;{/if}
+	<a href="{$result_navigator[n]._link}" class="result_navigator">{$result_navigator[n]._title}</a>
+{/section}-->

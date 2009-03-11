@@ -1,0 +1,1 @@
+require 'portallus_component'

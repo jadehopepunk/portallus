@@ -1,0 +1,15 @@
+<% if @relationships != nil -%>
+  <div class="suggestions" id="relationship_suggestions_content" <%= 'style="display: none;"' unless @showing -%>>
+    <% @relationships.each do |relationship| -%>
+      <a onclick="document.getElementById('<%= @field %>').value = this.innerHTML;"><%= relationship.description -%></a>
+    <% end -%>
+  </div>
+  <% unless @showing -%>
+  <script type="text/javascript" language="javascript">
+    // <![CDATA[
+      Effect.Appear('relationship_suggestions_content');
+    // ]]>
+  </script>
+  <% end -%>
+<% end -%>
+

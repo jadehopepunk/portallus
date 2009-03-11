@@ -1,0 +1,10 @@
+if @saved
+  page.visual_effect :appear, 'new_item_link', :duration => 0.5
+  page.visual_effect :fade, 'relationship_form', :duration => 0.5
+  page.insert_html :bottom, 'relationship_list_container', :partial => 'relationship'
+  page.hide 'relationship_section_'+ @relationship.id.to_s
+  page.visual_effect :appear, 'relationship_section_'+ @relationship.id.to_s, :duration => 1.5
+  page.show 'relationship_tree'
+else
+  page.replace_html 'relationship_form', :partial => 'form'
+end

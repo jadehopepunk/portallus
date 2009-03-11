@@ -1,0 +1,4 @@
+<div style="position: relative; overflow: visible;" >
+  <a class="event" id="event_<%= @event.id %>" href="<%= @section.url + "/event/" + @event.id.to_s %>" onmouseover="javascript: DisplaySummary(<%= @event.id %>); return false;" onmouseout="javascript: HideSummary(<%= @event.id %>);"><%= @event.title %></a>
+  <%= render(:partial => "event_summary") %>
+</div>

@@ -1,0 +1,186 @@
+body
+{
+  background-color: #F0F0F0;
+}
+
+a.article_heading, a.article_heading:link, a.article_heading:active, a.article_heading:visited
+{
+  color: #3A5193;
+}
+
+a.article_heading:hover
+{
+  text-decoration: underline;
+}
+
+a.menu_link0, a.menu_link0:link, a.menu_link0:active, a.menu_link0:visited
+{
+}
+
+a.menu_link0:hover
+{
+  background-color: #D3F5E1;
+}
+
+a.menu_link1, a.menu_link1:link, a.menu_link1:active, a.menu_link1:visited
+{
+}
+
+a.menu_link1:hover
+{
+  background-color: #D3F5E1;
+}
+
+span.menu0
+{
+  padding: 3px;
+  display: block;
+  width: 100%;
+}
+
+span.menu_active0
+{
+  padding: 3px;
+  background-color: #FFE45E;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+}
+
+span.menu1
+{
+	padding: 3px;
+	padding-left: 14px;
+	display: block;
+	width: 100%;
+}
+
+div.content_panel
+{
+  padding: 4px;
+}
+
+div.menu_box
+{
+  border: solid #99CCFF 4px;
+  border-right: none;
+  background-color: #E9F1F8;
+}
+
+div.box
+{
+  border: solid #99CCFF 4px;
+  margin-right: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background-color: #E9F1F8;
+}
+
+a.box_heading, a.box_heading:link, a.box_heading:active, a.visited
+{
+  color: #5C82EB;
+}
+
+a.box_heading:hover
+{
+  color: #7FB6FF;
+}
+
+div.box_heading, span.box_heading
+{
+  background-color: #99CCFF;
+  text-align: center;
+  color: #5C82EB;
+}
+
+.box_sub_heading
+{
+  color: #3A5193;
+}
+
+div.box_content_item
+{
+}
+
+div.box_contents
+{
+  padding: 0px;
+}
+
+span.site_title
+{
+  letter-spacing: 0.2em;
+  margin-top: 0.5em;
+  color: #3A5193;
+  font-size: 32pt;
+  font-weight: bold;
+}
+
+p.site_sub_title
+{
+  margin-left: 5em;
+}
+
+div.article_edit_tools
+{
+  text-align: right;
+  float: right;
+  background-color: #FFFFFF;
+}
+
+a.action_tab
+{
+	border: solid #006600 2px;
+	background-color: #CCFF99;
+	color: #333366;
+	font-size: large;
+	display: block;
+	float: right;
+	margin: 2px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+a.action_tab:hover
+{
+	text-decoration: none;
+	background-color: #FFFF66;
+	color: #333366;
+}
+
+a.action_tab img
+{
+	vertical-align: middle;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+a.action_tab_active
+{
+	border: solid #333366 2px;
+	background-color: #9999CC;
+	color: #333366;
+	font-size: large;
+	width: 80px;
+	display: block;
+	float: right;
+	margin: 2px;
+	padding: 4px;
+	text-align: center;
+}
+
+a.action_tab_active:hover
+{
+	text-decoration: none;
+}
+
+a.action_tab_active img
+{
+	vertical-align: middle;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+

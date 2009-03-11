@@ -1,0 +1,7 @@
+  <div class="breadcrumb">
+    <a class="breadcrumb" href="<%= url_for( :action=> "show", :name => '') %>">Home</a>
+    <% @section.breadcrumb_trail.each do |breadcrumb_section| %>
+    	&gt;
+    	<a class="breadcrumb" href="<%= url_for( :action=> "show", :name => breadcrumb_section) %>"><%=h breadcrumb_section.heading %></a>
+	<% end %>
+  </div>

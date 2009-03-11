@@ -1,0 +1,42 @@
+<h1>New Relationship</h1>
+
+<%= start_form_tag(:action => 'show', :name => @current_link) %>
+  <div>
+    <%= error_messages_for 'relationship' %>
+
+    <div align="center">
+      <table border="0">
+        <tr align="center">
+          <td></td>
+          <td>Your Name</td>
+          <td><label for="relationship_description">Relationship Description</label></td>
+          <td><label for="relationship_destination">With</label></td>
+        </tr>
+        <tr style="font-style: italic;" align="center">
+          <td>example: </td>
+          <td>Emlyn ap Rhys</td>
+          <td>is a friend of</td>
+          <td>Ghengis Khan</td>
+        </tr>
+        <tr>
+          <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr align="center" valign="top">
+          <td></td>
+          <td style="padding-left: 10px; padding-right: 10px"><%=h @relationship.source.name %></td>
+          <td style="padding-left: 10px; padding-right: 10px" valign="top">
+            <%= text_field('relationship', 'description') %>
+            <div id="relationship_description_suggestions"></div>
+            <%= observe_field(:relationship_description, :frequency => 0.5, :update => :relationship_description_suggestions, :url => {:controller => 'relationships', :action => 'suggestions'}) %>
+          </td>
+          <td style="padding-left: 10px; padding-right: 10px" valign="top"><%= select("relationship", "destination_id", @relationship.available_destinations.collect {|p| [ p.name, p.id ] }, { :include_blank => true }) %></td>
+        </tr>
+      </table>
+    </div>
+
+    <input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+    <input class="button" type="image" src="<%= image_path('/images/48x48/cancel.gif') %>" name="submit" id="cancel" value="cancel" alt="cancel" style="float: left">
+    <br>
+    <br>
+  </div>
+<%= end_form_tag %>

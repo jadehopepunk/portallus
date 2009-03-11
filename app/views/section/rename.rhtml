@@ -1,0 +1,21 @@
+<h1>Rename Section</h1>
+
+<%= start_form_tag(:action => 'rename', :name => @section.to_param) %>
+	<div>
+		
+		<%= error_messages_for 'edit_section' %>
+			
+		<table border="0" cellspacing="0" cellpadding="0" class="portallus_form">
+			<tr valign="top">
+				<td align="right" class="label_column"><label for="edit_section_heading">Heading</label></td>
+				<td><%= text_field('edit_section', 'heading') %></td>
+			</tr>
+		</table>
+		<br>
+		<br>		
+		<br>		
+		
+		<input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="submit" alt="submit" style="float: right">
+		<input class="button" type="image" src="<%= image_path('/images/48x48/cancel.gif') %>" name="cancel" id="cancel" value="cancel" alt="cancel" style="float: left">
+	</div>
+<%= end_form_tag %>

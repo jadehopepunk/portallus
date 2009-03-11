@@ -1,0 +1,13 @@
+
+create_table :events do |table|
+  table.column(:title,  :string)
+  table.column(:location, :text)
+  table.column(:details, :text)
+  table.column(:start, :datetime)
+  table.column(:end, :datetime)
+  table.column(:event_set_id, :integer)
+end
+
+create_table :event_sets do |table|
+  table.column(:section_id, :integer)
+end  end

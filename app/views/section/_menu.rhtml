@@ -1,0 +1,133 @@
+<table cellpadding="0" cellspacing="0" class="box" border="0">
+  <tr class="top" valign="bottom">
+    <td class="left"> </td>
+    <td class="center">
+      <div class="inner">
+        <a href="<%= url_for( :action=> "show", :name => @menu_title_name) %>" class="box_heading"><%= @menu_title %></a>
+      </div>
+    </td>
+    <td class="right"> </td>
+  </tr>
+</table>
+<table cellpadding="0" cellspacing="0" class="box" border="0">
+  <tr class="center">
+    <td class="left"> </td>
+    <td class="center">
+      <div class="inner">
+
+        <% for section in @sections -%>
+          <a class="root<%= "_active" if section == @section %>" href="<%= url_for( :action=> "show", :name => section) %>">
+            <%=
+              image_tag('/images/16x16/section_' + (section.has_children ? 'container' : 'page') + '.gif', :size => '16x16', :alt => section.heading)
+            %>&nbsp;<%= section.heading %>
+          </a>
+
+          <% if section == @section -%>
+            <% for child_section in section.children -%>
+              <a class="child" href="<%= url_for( :action=> "show", :name => child_section) %>">
+                <%=
+                  image_tag('/images/16x16/section_' + (child_section.has_children ? 'container' : 'page') + '.gif', :size => '16x16', :alt => child_section.heading)
+                %>&nbsp;<%= child_section.heading %>
+              </a>
+            <% end -%>
+          <% end -%>
+
+        <% end -%>
+
+      </div>
+    </td>
+    <td class="right"> </td>
+  </tr>
+</table>
+<table cellpadding="0" cellspacing="0" class="box" border="0" width="100%">
+  <tr class="bottom">
+    <td class="left"> </td>
+    <td class="center"> <div class="inner">&nbsp;</div> </td>
+    <td class="right"> </td>
+  </tr>
+</table>
+
+
+<% if @node_admin_options != nil -%>
+  <br>
+  <table cellpadding="0" cellspacing="0" class="box" border="0">
+    <tr class="top" valign="bottom">
+      <td class="left"> </td>
+      <td class="center">
+        <div class="inner">
+          <span>Site Admin</span>
+        </div>
+      </td>
+      <td class="right"> </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" class="box" border="0">
+    <tr class="center">
+      <td class="left"> </td>
+      <td class="center">
+        <div class="inner">
+
+          <% for option in @node_admin_options -%>
+            <a href="<%= url_for(:action => option['action']) %>" name="<%= option['action'] %>">
+              <%= image_tag(option['image'], :size => '16x16') %>&nbsp;<%=h option['title'] %>
+            </a>
+          <% end -%>
+
+        </div>
+      </td>
+      <td class="right"> </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" class="box" border="0" width="100%">
+    <tr class="bottom">
+      <td class="left"> </td>
+      <td class="center"> <div class="inner">&nbsp;</div> </td>
+      <td class="right"> </td>
+    </tr>
+  </table>
+
+<% end -%>
+
+<% if @section_admin_options != nil -%>
+
+  <br>
+  <table cellpadding="0" cellspacing="0" class="box" border="0">
+    <tr class="top" valign="bottom">
+      <td class="left"> </td>
+      <td class="center">
+        <div class="inner">
+          <span>
+            This Section
+          </span>
+        </div>
+      </td>
+      <td class="right"> </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" class="box" border="0">
+    <tr class="center">
+      <td class="left"> </td>
+      <td class="center">
+        <div class="inner">
+
+          <% for option in @section_admin_options -%>
+            <a href="<%= url_for(:action => option['action'], :name => @section) %>" name="<%= option['action'] %>">
+              <%= image_tag(option['image'], :size => '16x16') %>&nbsp;<%=h option['title'] %>
+            </a>
+          <% end -%>
+
+        </div>
+      </td>
+      <td class="right"> </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" class="box" border=0" width="100%">
+    <tr class="bottom">
+      <td class="left"> </td>
+      <td class="center"> <div class="inner">&nbsp;</div> </td>
+      <td class="right"> </td>
+    </tr>
+  </table>
+
+
+<% end -%>

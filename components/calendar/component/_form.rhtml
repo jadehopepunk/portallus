@@ -1,0 +1,35 @@
+<div>
+  <%= error_messages_for 'event'  %>
+
+  <table cellspacing="0" cellpadding="0" class="portallus_form">
+    <tr>
+      <td class="label_column">
+        <label for="event_title">Title:</label>
+      <td><%= text_field('event', 'title') %></td>
+    </tr>
+    <tr>
+      <td class="label_column">
+        <label for="event_start">Start Date/Time:</label>
+      </td>
+      <td><%= datetime_select('event', 'start') %></td>
+    </tr>
+    <tr>
+      <td class="label_column">
+        <label for="event_end">End Date/Time:</label>
+      </td>
+      <td><%= datetime_select('event', 'end') %></td>
+    </tr>
+    <tr>
+      <td class="label_column">
+        <label for="event_location">Location:</label>
+      <td><%= text_field('event', 'location') %></td>
+    </tr>
+    <tr>
+      <td class="label_column">
+        <label for="event_details">Details:</label>
+      </td>
+      <td><%= text_area('event', 'details', 'rows' => 8) %></td>
+    </tr>
+  </table>
+
+</div>

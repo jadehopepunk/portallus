@@ -1,0 +1,51 @@
+table.tree
+{
+}
+
+td.tree_root
+{
+  width: 150px;
+  text-align: center;
+}
+
+td.tree_trunk
+{
+  width: 150px;
+  text-align: center;
+  vertical-align: bottom;
+  background-image: url('../images/tree/middle.gif');
+  background-repeat: repeat-y;
+}
+
+table.tree_row td.description_cell
+{
+  background-image: url('../images/tree/horizontal.gif');
+  background-repeat: repeat-x;
+  background-position: center left;
+  width: 300px;
+  height: 150px;
+  text-align: right;
+}
+
+table.tree_row td.description_cell span
+{
+  background-color: white;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table.tree td.icon_and_name_container_left
+{
+  text-align: right;
+  width: 140;
+}
+
+table.tree_row td.icon_and_name_container_right
+{
+  text-align: left;
+  width: 140;
+  height: 150px;
+  overflow: hidden;
+  font-size: 9pt;
+}

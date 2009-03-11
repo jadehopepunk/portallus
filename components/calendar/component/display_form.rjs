@@ -1,0 +1,6 @@
+page.hide 'event_summary'
+page.visual_effect :fade, 'new_item_link', :duration => 0.5
+
+page.replace_html 'event_form', :partial => 'inline_create_form'
+page.hide 'event_form'
+page.visual_effect :appear, 'event_form', :duration => 0.5

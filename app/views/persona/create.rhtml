@@ -1,0 +1,29 @@
+<%= start_form_tag :action=> "create" %>
+
+<div title="Account signup" id="signupform" class="form">
+	<h3>New SCA Persona Website</h3>
+	<ul>
+		<li>These details will be publicly visible.</li>
+	</ul>
+	<%= error_messages_for 'persona' %><br/>
+
+	<table border="0">
+		<tr>
+			<td>
+				<label for="person_society_name">Society Name:</label><br>
+				Just your name,<br>
+				Don't include ranks.
+			</td>
+			<td>
+				<%= text_field("persona", "society_name", :size => 60) %>
+			</td>
+		</tr>
+	</table>
+	<br/>
+
+	<div align="right">
+		<input class="button" type="image" src="/images/48x48/submit.gif" name="submit" value="submit" alt="submit">
+	</div>
+
+<%= end_form_tag %>
+

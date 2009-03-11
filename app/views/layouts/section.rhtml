@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Portallus</title>
+  <%= stylesheet_link_tag 'salamander_and_butter' %>
+  <%= stylesheet_link_tag 'portallus' %>
+  <%= stylesheet_link_tag 'forms' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'tabs' %>
+  <%= stylesheet_link_tag 'tree' %>
+  <%= stylesheet_link_tag 'calendar' %>
+  <%= javascript_include_tag 'tiny_mce/tiny_mce.js' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+  <%= render_partial "navigator" %>
+  <%= render_partial "site_tabs" %>
+
+  <div class="portal_body">
+
+    <table class="portal_header" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="left"><td>
+        <td class="center">
+          <span class="site_title" id="site_title"><%=h @person.name %></span>
+          <span class="site_sub_title"><%=h @person.title %></span>
+        <td>
+        <td class="right"><td>
+      </tr>
+    </table>
+    <%= render(:partial => "shared/body_start") %>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr valign="top">
+          <td width="160">
+            <%= render_partial "menu" %>
+          </td>
+          <td>
+            <div class="content_panel">
+              <%= render_partial "breadcrumb" %>
+              <% if @flash['notice'] -%>
+                <div class="notice"><%= @flash['notice'] %></div>
+              <% end -%>
+              <br>
+              <%= @content_for_layout %>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <%= render(:partial => 'shared/body_end') %>
+
+    <div align="center">
+      Powered by <a href="http://www.portallus.com">Portallus</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+[Dir app]
+Dirs=apis/controllers/helpers/models/.svn/views
+Files=
+
+[Dir components]
+Dirs=about_persona/blog/person_list/single_page/.svn
+Files=
+
+[Dir components/about_persona]
+Dirs=component
+Files=component_controller.rb
+
+[Dir components/about_persona/component]
+Dirs=
+Files=index.rhtml/_action_menu.rhtml/edit.rhtml
+
+[Dir components/single_page]
+Dirs=component
+Files=component_controller.rb/page.rb
+
+[Dir components/single_page/component]
+Dirs=
+Files=_action_menu.rhtml/admin_blank.rhtml/blank.rhtml/edit.rhtml/_form.rhtml/index.rhtml
+
+[Project Dir]
+Dirs=app/components/config/db/doc/lib/log/.metadata/public/script/.svn/test/vendor
+Files=CHANGELOG/portallus.kateproject/.project/Rakefile/README/README_LOGIN/rubyport.kdevelop/rubyport.kdevses
+
+[Project File]
+Name=portallus
+Type=Default

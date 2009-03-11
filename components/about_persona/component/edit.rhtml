@@ -1,0 +1,79 @@
+<h1>Editing My Details</h1>
+<br>
+<%= start_form_tag({:action => 'edit', :name => @section}, {:multipart => true}) %>
+  <div>
+    <%= error_messages_for 'edit_details' %>
+
+    <table cellspacing="0" cellpadding="0" class="portallus_form">
+      <tr>
+        <td class="label_column"><label for="edit_details_title">Title</label></td>
+        <td><%= select("edit_details", "title", @edit_details.title_options) %></td>
+      </tr>
+      <tr>
+        <td class="label_column"><label>Name</label></td>
+        <td><%=h @details.send('name') %></td>
+      </tr>
+      <tr>
+        <td class="label_column"><label for="site_picture">Picture</label></td>
+        <td>
+          <% unless @site.picture.blank? then -%>
+              <%= image_tag(url_for_file_column("site", "picture")) %>
+              <br />
+          <% end -%>
+          <%= file_column_field "site", "picture" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="label_column"><label for="edit_details_device">Device</label></td>
+        <td>
+          <% unless @edit_details.device.blank? then -%>
+              <%= image_tag(url_for_file_column("edit_details", "device")) %>
+              <br />
+          <% end -%>
+          <%= file_column_field "edit_details", "device" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label_column"><label for="edit_details_local_group">Local Group</label></td>
+        <td><%= text_field('edit_details', 'local_group') %></td>
+      </tr>
+      <tr>
+        <td class="label_column"><label for="edit_details_kingdom">Kingdom</label></td>
+        <td><%= select("edit_details", "kingdom", @edit_details.kingdom_options) %></td>
+      </tr>
+      <tr>
+        <td class="label_column"><label for="edit_detailsawards">Awards</label></td>
+        <td><%= text_area('edit_details', 'awards', :rows => 4) %></td>
+      </tr>
+      <tr>
+        <td class="label_column"><label for="edit_details_offices_held">Offices Held</label></td>
+        <td><%= text_area('edit_details', 'offices_held', :rows => 3) %></td>
+      </tr>
+      <tr>
+        <td class="label_column">
+          <label for="edit_details_historical_context">Historical Context</label><br />
+          <span class="field_description">
+            What part of the middle ages does your persona represent?
+          </span>
+        </td>
+        <td><%= text_area('edit_details', 'historical_context', :rows => 5) %></td>
+      </tr>
+      <tr>
+        <td class="label_column">
+          <label for="edit_details_introduction">Site Introduction</label><br />
+          <span class="field_description">
+            This is the front page of your site.<br />
+            Consider adding text here to introduce yourself and welcome visitors.
+          </span>
+        </td>
+        <td><%= html_field('edit_details', 'site_introduction', @edit_details.site_introduction) %></td>
+      </tr>
+    </table>
+
+    <input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+    <input class="button" type="image" src="<%= image_path('/images/48x48/cancel.gif') %>" name="submit" id="cancel" value="cancel" alt="cancel" style="float: left">
+    <br>
+    <br>
+  </div>
+<%= end_form_tag %>

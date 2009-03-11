@@ -1,0 +1,29 @@
+<%= start_form_tag :action=> "login" %>
+
+<div title="Account login" id="loginform" class="form" style="width: 300px; display: table;">
+    <h1>Portallus Login</h1>
+    
+    <% if @flash['notice'] %>
+		<div class="errorExplanation" id="errorExplanation">
+			<h2><%= @flash['notice'] %></h2>
+			<p>The Email and Password combination you entered was not correct.</p>
+		</div>
+    <% end %>
+
+	<div align="center">
+		<div style="display: table">
+		    <label for="user_email">Email:</label><br/>
+		    <input type="text" name="user_email" id="user_email" size="30" value=""/><br/>
+		
+		    <label for="user_password">Password:</label><br/>
+		    <input type="password" name="user_password" id="user_password" size="30"/>
+		</div>
+	    <br/>
+	    <input class="button" type="image" src="<%= image_path('/images/48x48/login.gif') %>" name="submit" id="submit" value="submit" alt="submit">
+    </div>
+
+	<p>New User? <%= link_to('Click Here', :controller => 'user', :action => 'signup') %> to get a free account.</p>
+</div>
+
+<%= end_form_tag %>
+

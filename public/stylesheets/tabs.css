@@ -1,0 +1,32 @@
+div.tab_bar
+{
+  height: 47px;
+  background-image: url('../images/tabs/tabbar_background.gif');
+  vertical-align: top;
+  width: 100%;
+}
+
+td.site_tab
+{
+  height: 47px;
+  background-image: url('../images/tabs/tab_center.gif');
+  vertical-align: center;
+}
+
+td.site_tab a
+{
+  color: black;
+}
+
+td.site_tab_current
+{
+  height: 47px;
+  background-image: url('../images/tabs/tab_active_center.gif');
+  vertical-align: center;
+}
+
+td.site_tab_current a
+{
+  color: black;
+}
+

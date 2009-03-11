@@ -1,0 +1,28 @@
+<div>
+
+  <%= error_messages_for 'edit_section' %>
+
+  <table border="0" cellspacing="0" cellpadding="0" class="portallus_form">
+    <tr valign="top">
+      <td align="right" class="label_column"><label for="edit_section_heading">Heading</label></td>
+      <td><%= text_field('edit_section', 'heading') %></td>
+    </tr>
+    <tr>
+      <td class="label_column"><label for="edit_section_component">Type of Section</label></td>
+      <td>
+        <% @section_types.each do |section_type| %>
+          <div class="selection_block">
+            <%= radio_button('edit_section', 'section_type_id', section_type.id) %>
+            <h3><%=h section_type.title %></h3>
+            <%=h section_type.description %>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <a href="<%= url_for(:action => "show") %>" style="float: left"><img src="<%= image_path('/images/48x48/cancel.gif') %>"></a>
+  <input class="button" type="image"  src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="submit" alt="submit" style="float: right">
+  <br>
+  <br>
+</div>

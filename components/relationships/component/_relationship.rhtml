@@ -1,0 +1,28 @@
+<div id="relationship_section_<%=h relationship.id %>" onmouseover="document.getElementById('delete_link_<%=h relationship.id %>').style.display = 'inline'" onmouseout="document.getElementById('delete_link_<%=h relationship.id %>').style.display = 'none'">
+  <table class="tree_row" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td class="description_cell"><span><%=h relationship.description %></span></td>
+      <td class="icon_and_name_container_right">
+        <a href="/people/<%= relationship.destination.to_param %>" style="text-decoration: none;" >
+           <%= image_tag(
+              (relationship.destination.picture.blank? ? '/images/nopic.gif' : url_for_file_column_from_object(relationship.destination, "picture", "thumb")),
+              {:style => 'border: solid #666666 4px;', :alt => relationship.destination.name}) %>
+        <a>
+        <br>
+        <a href="/people/<%= relationship.destination.to_param %>" >
+          <%=h relationship.destination.name %>
+        <a>
+      </td>
+      <td>
+        <% if @can_administer -%>
+          <%= link_to_remote(
+                image_tag("/images/48x48/delete.png", :size => '22x22', :align => "top"),
+                { :url => @section.to_param + '/delete/' + relationship.id.to_s },
+                { :id => "delete_link_" + relationship.id.to_s, :style => "display: none;" }
+            ) %>
+        <% end -%>
+      </td>
+    </tr>
+  </table>
+</div>
+

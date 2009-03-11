@@ -1,0 +1,9 @@
+<h1>Editing Event</h1>
+<br>
+<%= start_form_tag(:action => 'edit', :name => @current_link) %>
+  <%= render_partial "form" %>
+
+  <input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+  <a href="<%= "../event/" + @event.id.to_s %>" style="float: left"><img src="<%= image_path('/images/48x48/cancel.gif') %>" /></a>
+
+<%= end_form_tag %>

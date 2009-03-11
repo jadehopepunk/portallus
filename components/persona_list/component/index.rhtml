@@ -1,0 +1,39 @@
+<h1><%=h @section.send('heading') %></h1>
+
+<p>
+  The following SCA persona sites have been created. You can create one too, by
+  <a href="http://www.portallus.com/persona/create">Clicking Here</a>.
+</p>
+
+<% for @persona in @personae -%>
+  <% @details = @persona.details -%>
+  <div align="left">
+      <table>
+        <tr valign="top">
+          <td width="80">
+            <% unless @persona.picture.blank? then -%>
+              <a href="<%= url_for(:controller => 'section', :action => 'show', :username => @persona) %>"><%= image_tag(url_for_file_column("persona", "picture", "thumb")) %></a>
+            <% else -%>
+              <%= image_tag('/images/nopic.gif') %>
+            <% end -%>
+          </td>
+          <td>
+            <a href="<%= url_for(:controller => 'section', :action => 'show', :username => @persona) %>"><%=h @persona.details.send('full_name') %></a>
+            <br />
+
+            <% unless @persona.details.local_group.blank? then -%>
+              <%=h @persona.details.send('local_group') %>,
+            <% end -%>
+            <% unless @persona.details.kingdom.blank? then -%>
+              <%=h @persona.details.send('kingdom') %>
+            <% end -%>
+          </td>
+        </tr>
+      </table>
+
+  </div>
+  <br>
+
+
+<% end -%>
+

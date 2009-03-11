@@ -1,0 +1,8 @@
+<div class="navigator">
+	<% if user? -%>
+		Welcome <%= link_to(user.email, {:username => user.default_person_param, :name => '', :action => 'show'}) %>, <%= link_to("logout", {:controller => 'user', :action => 'logout'}) %>.<br>
+		<%= link_to("Change Your Details", {:controller => 'user', :action => 'edit'}) %>
+	<% else -%>
+		If you have a portallus account, <%= link_to("sign in", {:controller => 'user', :action => 'login'}) %>.
+	<% end -%>
+</div>

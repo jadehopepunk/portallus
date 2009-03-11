@@ -1,0 +1,5 @@
+<% if @section_tabs -%>
+	<% for tab in @section_tabs -%>
+		<a href="<%=h tab['url'] %>" class="action_tab<%= '_active' if tab['active'] %>" name="<%=h tab['title'] %>"><%= image_tag(tab['image'], :size => '22x22') %>&nbsp;<%=h tab['title'] %></a>
+	<% end -%>
+<% end -%>

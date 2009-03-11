@@ -1,0 +1,17 @@
+xml.instruct! :xml, :version=>"1.0" 
+xml.instruct! :rss, :version=>"2.0" 
+xml.channel{
+	xml.title(@section.heading)
+	xml.link(@path)
+	xml.generator("http://www.portallus.com/")
+	for entry in @entries
+		xml.item do
+			xml.title(entry.heading)
+			xml.description(entry.text)
+			xml.link(@path + entry.show_link)
+			xml.pubDate(entry.created_at)
+			xml.generator("http://www.portallus.com/")
+			xml.docs("http://blogs.law.harvard.edu/tech/rss")
+		end
+	end
+}

@@ -1,0 +1,11 @@
+page.hide 'event_summary'
+
+if @saved
+  page.hide 'event_form'
+  page.visual_effect :appear, 'new_item_link', :duration => 0.5
+  @insert_dates.each do |insert_date|
+    page.insert_html :bottom, insert_date.to_s, :partial => 'event_link'
+  end
+else
+  page.replace_html 'event_form', :partial => 'inline_create_form'
+end

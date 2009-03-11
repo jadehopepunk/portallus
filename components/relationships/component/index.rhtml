@@ -1,0 +1,35 @@
+<h1><%=h @section.send('heading') %></h1>
+
+<div id="new_item_link" align="right" style="padding-right: 10px">
+  <% if @can_administer -%>
+    <%= link_to_remote(
+      image_tag("/images/22x22/new.png", :size => '22x22') + "&nbsp;New Relationship",
+      { :url => @section.to_param + '/display_form' },
+      { :class => "ajax_action_button"}) %>
+  <% end -%>
+</div>
+<div id="relationship_form">
+</div>
+
+<table class="tree" id="relationship_tree" cellpadding="0" cellspacing="0" border="0" <%= 'style="display: none;"' unless @relationships.length > 0 %>>
+  <tr valign="top">
+    <td class="tree_root">
+      <% if !@site.picture.blank? -%>
+        <%= image_tag(url_for_file_column("site", "picture", "thumb"), {:style => 'border: solid #666666 4px;'}) %>
+      <% else -%>
+        <%= image_tag('/images/nopic.gif', {:style => 'border: solid #666666 4px;'}) %>
+      <% end -%>
+    </td>
+    <td>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="tree_trunk">
+      <img src="/images/tree/bottom.gif">
+    </td>
+    <td class="tree_branches" id="relationship_list_container">
+      <%= render(:partial => 'relationship' , :collection => @relationships) %>
+    </td>
+  </tr>
+</table>
+

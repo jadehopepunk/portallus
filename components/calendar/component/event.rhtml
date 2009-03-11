@@ -1,0 +1,33 @@
+<h1><%=h @event.title %></h1>
+
+<div id="new_item_link" style="float: right">
+  <% if @can_administer -%>
+    <a href="<%= "../edit/" + @event.id.to_s %>" class="ajax_action_button"><%= image_tag("/images/22x22/edit.png", :size => '22x22') + "&nbsp;Edit" %></a>
+    <a href="<%= "../delete/" + @event.id.to_s %>" onclick="javascript: return confirm('Are you sure you want to delete this event?');" class="ajax_action_button"><%= image_tag("/images/22x22/delete.png", :size => '22x22') + "&nbsp;Delete" %></a>
+  <% end -%>
+</div>
+
+<table class="record_details">
+  <tr>
+    <td class="label">Start</td>
+    <td><%= @event.start.strftime("%a %d %B, %I:%M %p") %></td>
+  </tr>
+  <% unless @event.end.blank? -%>
+  <tr>
+    <td class="label">End</td>
+    <td><%= @event.end.strftime("%a %d %B, %I:%M %p") %></td>
+  </tr>
+  <% end -%>
+  <% unless @event.location.blank? -%>
+  <tr>
+    <td class="label">Location</td>
+    <td><%=h @event.location %></td>
+  </tr>
+  <% end -%>
+</table>
+
+<div><%= simple_format h @event.details %></div>
+
+<div class="todo_next">
+  <a href="<%= url_for(:action => 'show', :name => @section.to_param) %>">Return To <%= @section.heading %></a>
+</div>

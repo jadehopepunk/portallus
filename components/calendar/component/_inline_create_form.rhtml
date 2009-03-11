@@ -1,0 +1,12 @@
+<div class="inline_form">
+  <h2>New Event</h2>
+  <%= form_remote_tag(:update => 'add_event_form', :url => @current_link) %>
+    <%= render(:partial => "form") %>
+    <input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+
+    <%= link_to_function(image_tag('/images/48x48/cancel.gif'), "new Effect.Fade('event_form'); new Effect.Appear('new_item_link');") %>
+    <br />
+    <br />
+
+  <%= end_form_tag %>
+</div>

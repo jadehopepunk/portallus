@@ -1,0 +1,29 @@
+<div>
+	<%= error_messages_for 'edit_entry' %>
+
+	<table cellspacing="0" cellpadding="0" class="portallus_form">
+		<tr>
+			<td class="label_column">
+				<label for="section_heading">Heading:</label>
+			<td><%= text_field('edit_entry', 'heading') %></td>
+		</tr>
+		<tr>
+			<td class="label_column">
+				<label for="section_text">Article Text:</label><br>
+				The main text of your journal entry or news article. This will be displayed on the main list page.</td>
+			<td><%= html_field('edit_entry', 'text', @edit_entry.text) %></td>
+		</tr>
+		<tr>
+			<td class="label_column">
+				<label for="section_more_text">More Text:</label><br>
+			 	More detailed text which is displayed if the user clicks "More Info".
+			</td>
+			<td><%= html_field('edit_entry', 'more_text', @edit_entry.more_text) %></td>
+		</tr>
+	</table>
+
+	<input class="button" type="image" src="<%= image_path('/images/48x48/submit.gif') %>" name="submit" id="submit" value="save" alt="save" style="float: right">
+	<input class="button" type="image" src="<%= image_path('/images/48x48/cancel.gif') %>" name="submit" id="cancel" value="cancel" alt="cancel" style="float: left">
+	<br>
+	<br>
+</div>

@@ -1,0 +1,32 @@
+<script language="Javascript">
+	<% if @image.file then -%>
+		tinyMCEPopup.execCommand("mceInsertContent", false, '<%= image_tag(url_for_file_column("image", "file")) %>');
+		//tinyMCE._setEventsEnabled(inst.getBody(), false);
+		tinyMCEPopup.close();
+	<% end -%>
+</script>
+
+<h1>Insert Image</h1>
+<%= form_tag({ :action => 'upload' }, { :multipart => true }) %>
+	<%= error_messages_for 'image' %>
+	<table border="0">
+		<tr>
+			<td valign="top">
+				<label for="image_file">Image:</label>
+			</td>
+			<td>
+					<%= file_column_field "image", "file" %>
+			</td>
+		</tr>
+	</table>
+	
+	<div class="mceActionPanel">
+		<div style="float: left">
+			<input type="submit" id="insert" name="commit" value="Insert"" />
+		</div>
+
+		<div style="float: right">
+			<input type="button" id="cancel" name="cancel" value="Cancel" onclick="tinyMCEPopup.close();" />
+		</div>
+	</div>
+<%= end_form_tag %>

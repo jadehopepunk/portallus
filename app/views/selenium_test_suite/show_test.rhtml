@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title><%= @title %></title>
+		<style>
+			body
+			{
+				font-size: 10pt;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<table cellpadding="2" cellspacing="0" border="1">
+			<tr>
+				<td colspan = "3">
+					<%= @title %>
+				</td>				
+			</tr>
+			<% @tests.each do |test| -%>
+			<tr>
+				<td><%= test[:action] %></td>
+				<td><%= test[:target] %></td>
+				<td><%= test[:parameter] %></td>
+			</tr>
+			<% end -%>
+		</table>
+	
+	</body>
+</html>
